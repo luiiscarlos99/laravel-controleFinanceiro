@@ -1,0 +1,24 @@
+Migrating: 2021_08_19_184042_accounts_month
+
+   Illuminate\Database\QueryException  : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'accounts_month' already exists (SQL: create table `accounts_month` (`id` bigint unsigned not null auto_increment primary key, `value` decimal(9, 2) not null, `accounts_id` bigint unsigned not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at /Users/luis/Downloads/Dev/Laravel/controleFinanceiro/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664
+    660|         // If an exception occurs when attempting to run a query, we'll format the error
+    661|         // message to include the bindings with SQL, which will make this exception a
+    662|         // lot more helpful to the developer instead of just the database's errors.
+    663|         catch (Exception $e) {
+  > 664|             throw new QueryException(
+    665|                 $query, $this->prepareBindings($bindings), $e
+    666|             );
+    667|         }
+    668|
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'accounts_month' already exists")
+      /Users/luis/Downloads/Dev/Laravel/controleFinanceiro/vendor/laravel/framework/src/Illuminate/Database/Connection.php:458
+
+  2   PDOStatement::execute()
+      /Users/luis/Downloads/Dev/Laravel/controleFinanceiro/vendor/laravel/framework/src/Illuminate/Database/Connection.php:458
+
+  Please use the argument -v to see more details.
