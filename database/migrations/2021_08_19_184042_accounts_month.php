@@ -15,6 +15,9 @@ class AccountsMonth extends Migration
     {
         Schema::create('accounts_month', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->decimal('value', 9, 2);
+            $table->unsignedBigInteger('accounts_id');
+            $table->foreign('accounts_id')->references('id')->on('accounts');
             $table->timestamps();
         });
     }
